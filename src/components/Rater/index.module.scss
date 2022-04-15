@@ -1,0 +1,31 @@
+@import "../../css/variables";
+
+.rater {
+  display: inline-flex;
+  overflow-x: scroll;
+  border: 1px solid #eeebf2;
+  .figure {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .figure + .figure {
+    border-left: 1px solid #eeebf2;
+  }
+  .figure:hover {
+    background-color: #eeebf2;
+  }
+  .figure.no-value {
+    background-color: #eeebf2;
+  }
+  .figure.active {
+    background-color: $primary-color;
+    color: white;
+    pointer-events: none;
+  }
+}

@@ -1,1 +1,2 @@
 export const SET_APP_STATE = "SET_APP_STATE";
+export const SET_RATING_RESULT = "SET_RATING_RESULT";
