@@ -1,16 +1,17 @@
 import Home from "../pages/Home";
 import { connect } from "react-redux";
+import style from "./index.module.scss";
 
 const DefaultLayout = (props) => {
   switch (props.appState) {
-    case "ideal":
-      return <Home />;
-    case "loading":
-      return <div>Loading...</div>;
     case "error":
       return <div>An error occured...</div>;
     default:
-      return <Home />;
+      return (
+        <div className={`${style["default-layout"]} ${style[props.appState]}`}>
+          <Home />
+        </div>
+      );
   }
 };
 
