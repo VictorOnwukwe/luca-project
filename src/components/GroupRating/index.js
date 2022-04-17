@@ -3,8 +3,15 @@ import style from "./index.module.scss";
 
 const GroupRating = (props) => {
   const { groups, onSelect } = props;
-  const handleSelect = (value, groupIndex, criteriaIndex) => {
-    if (onSelect) onSelect(value, groupIndex, criteriaIndex);
+  const handleSelect = (value, groupIndex, criterionIndex) => {
+    if (onSelect) {
+      const arr = groups.slice();
+      const group = arr[groupIndex];
+      const criteriaArr = group.criteria.slice();
+      const criterion = criteriaArr[criterionIndex];
+      criterion.rating = value;
+      onSelect(arr);
+    }
   };
   return (
     <div className={`${style["rating-group"]} ${props.className}`}>

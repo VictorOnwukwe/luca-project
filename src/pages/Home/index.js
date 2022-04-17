@@ -20,16 +20,10 @@ const generateGroups = () => {
 const HomePage = (props) => {
   const [groups, setGroups] = useState(generateGroups());
 
-  const handleSelect = (value, groupIndex, criterionIndex) => {
-    const arr = groups.slice();
-    const group = arr[groupIndex];
-    const criteriaArr = group.criteria.slice();
-    const criterion = criteriaArr[criterionIndex];
-    criterion.rating = value;
-    setGroups(arr);
+  const handleSelect = (value) => {
+    setGroups(value);
   };
   const resolveValue = () => {
-    console.log("here");
     props.evaluateRating(groups);
   };
   return (
