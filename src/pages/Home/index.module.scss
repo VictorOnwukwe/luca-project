@@ -32,6 +32,17 @@
   .primary-text {
     color: $primary-color;
   }
+  .single-rating-result {
+    display: flex;
+    .filler {
+      flex-grow: 1;
+      margin: 0 2px;
+      border-bottom: 1px dotted black;
+    }
+    h4{
+      margin-bottom: 0;
+    }
+  }
 }
 @media (min-width: 600px) {
   .home {
