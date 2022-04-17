@@ -15,7 +15,7 @@ export const evaluateRating = (groups) => (dispatch) => {
       }, 0);
       dispatch({
         type: SET_RATING_RESULT,
-        payload: Math.round(result / criteriaLength),
+        payload: (result / criteriaLength).toFixed(2),
       });
       dispatch({ type: SET_APP_STATE, payload: "ideal" });
     }, 3000);

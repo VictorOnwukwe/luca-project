@@ -58,7 +58,7 @@ const HomePage = (props) => {
         </div>
       ) : (
         <div>
-          <div className={style.feedback}>
+          <div className={`${style.feedback} ${style["bottom-margin"]}`}>
             <button
               onClick={() => {
                 props.clearRating();
@@ -71,6 +71,29 @@ const HomePage = (props) => {
             The user has an avaerage rating of{" "}
             <span className={style["primary-text"]}>{props.result}</span>
           </h1>
+          <div>
+            <h3 className={style["bottom-margin"]}>Here's how you rated</h3>
+            <div>
+              {groups.map((group) => {
+                return (
+                  <div key={group.name} className={style["bottom-margin"]}>
+                    <h3 className={`${style["primary-text"]}`}>{group.name}</h3>
+                    {group.criteria.map((criterion) => {
+                      return (
+                        <div className={style["single-rating-result"]}>
+                          <h4>{criterion.name}</h4>
+                          <div className={style.filler}></div>
+                          <h4 className={`${style["primary-text"]}`}>
+                            {criterion.rating || "n/a"}
+                          </h4>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       )}
     </div>
